@@ -67,7 +67,7 @@ class CellContent extends StatelessWidget {
     final alignment = calendarStyle.cellAlignment;
     final duration = const Duration(milliseconds: 250);
 
-    if (isDisabled) {
+    if (isDisabled && !isRangeStart && !isRangeEnd) {
       cell = calendarBuilders.disabledBuilder?.call(context, day, focusedDay) ??
           AnimatedContainer(
             duration: duration,
